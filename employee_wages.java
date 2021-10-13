@@ -9,23 +9,28 @@ public class employee_wages{
                 else
         		System.out.println("employee is absent");
 	}
-	public void dailyWages(){
+	public void WagesCal(){
                 int perHourWage=20;
                 int dailyWages=0;
 		int totalHour=8;
+		int monthWage=0;
 		Random r2=new Random();
 		int empCheck=r2.nextInt(2);
 		switch(empCheck){
 			case 0:
 				totalHour=4;
 				dailyWages=perHourWage*totalHour;
+				monthWage=dailyWages*20;
 				System.out.println("part time employee");;
                 		System.out.println("daily wages--"+dailyWages);
+				System.out.println("monthly wages--"+monthWage);
 				break;
 			case 1:
 				dailyWages=perHourWage*totalHour;
+				monthWage=dailyWages*20;
 				System.out.println("full time emplloyee");
 				System.out.println("daily wages--"+dailyWages);
+				System.out.println("monthly wages--"+monthWage);
 				break;
 			default:
 				System.out.println("employee on leave");
@@ -39,6 +44,6 @@ public class employee_wages{
 		System.out.println("------------------------------------------------");
 		employee_wages ew1=new employee_wages();
 		ew1.presentOrAbsent();
-		ew1.dailyWages();
+		ew1.WagesCal();
 	}
 }
