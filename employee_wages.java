@@ -15,16 +15,21 @@ public class employee_wages{
 		int totalHour=8;
 		Random r2=new Random();
 		int empCheck=r2.nextInt(2);
-		if (empCheck==0){
-			totalHour=4;
-			dailyWages=perHourWage*totalHour;
-			System.out.println("part time employee");;
-                	System.out.println("daily wages--"+dailyWages);
-		}
-		else{
-			dailyWages=perHourWage*totalHour;
-			System.out.println("full time emplloyee");
-			System.out.println("daily wages--"+dailyWages);
+		switch(empCheck){
+			case 0:
+				totalHour=4;
+				dailyWages=perHourWage*totalHour;
+				System.out.println("part time employee");;
+                		System.out.println("daily wages--"+dailyWages);
+				break;
+			case 1:
+				dailyWages=perHourWage*totalHour;
+				System.out.println("full time emplloyee");
+				System.out.println("daily wages--"+dailyWages);
+				break;
+			default:
+				System.out.println("employee on leave");
+
 		}
 	}
 
