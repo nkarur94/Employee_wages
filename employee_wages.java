@@ -37,6 +37,28 @@ public class employee_wages{
 
 		}
 	}
+	public void conditionclac(){
+                int count=0;
+                int no_days=31;
+                for(int i=0; i<=no_days; i++){
+                        Random r3=new Random();
+                        int dailyCheck=r3.nextInt(2);
+                                if(dailyCheck==1){
+                                        count++;
+                                        }
+                }
+                System.out.println("no of days-"+count);
+                int totalWorkingHrs=count*8;
+	                if (count<20 && totalWorkingHrs<100){
+                        int MonthlyWages=count*500;
+                        System.out.println("no of days  employee prsent in the month--"+count);
+                        System.out.println("salary as per attendence--$"+MonthlyWages);
+                        }
+                        else{
+                        System.out.println("work excided");
+                        }
+        }
+
 
 	public static void main(String[] args)
 	{
@@ -45,5 +67,6 @@ public class employee_wages{
 		employee_wages ew1=new employee_wages();
 		ew1.presentOrAbsent();
 		ew1.WagesCal();
+		ew1.conditionclac();
 	}
 }
