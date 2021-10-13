@@ -13,8 +13,19 @@ public class employee_wages{
                 int perHourWage=20;
                 int dailyWages=0;
 		int totalHour=8;
-		dailyWages=perHourWage*totalHour;
-                System.out.println("daily wages--"+dailyWages);
+		Random r2=new Random();
+		int empCheck=r2.nextInt(2);
+		if (empCheck==0){
+			totalHour=4;
+			dailyWages=perHourWage*totalHour;
+			System.out.println("part time employee");;
+                	System.out.println("daily wages--"+dailyWages);
+		}
+		else{
+			dailyWages=perHourWage*totalHour;
+			System.out.println("full time emplloyee");
+			System.out.println("daily wages--"+dailyWages);
+		}
 	}
 
 	public static void main(String[] args)
