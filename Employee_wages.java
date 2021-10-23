@@ -1,4 +1,5 @@
 import java.util.Random;
+
 public class Employee_wages{
 	
 	public void presentOrAbsent()
@@ -14,11 +15,13 @@ public class Employee_wages{
         		System.out.println("employee is absent");
 	}
 	
-	public void WagesCal(){
-                int perHourWage=20;
+	public void WagesCal(int perHourWage, String nameOfCompany){
+		nameOfCompany=nameOfCompany;
+                perHourWage=perHourWage;
                 int dailyWages=0;
 		int totalHour=8;
 		int monthWage=0;
+		System.out.println("CALCULATING WAGE FOR "+nameOfCompany+" EMPLOYEES");
 		Random r2=new Random();
 		int empCheck=r2.nextInt(2);
 		
@@ -45,10 +48,13 @@ public class Employee_wages{
 		}
 	}
 
-	public void conditionclac()
+	public void conditionclac(int noOfWorkingDays, int monthlyWorkingHrs, int salaryPerDay)
 	{
                 int count=0;
                 int no_days=31;
+		noOfWorkingDays=noOfWorkingDays;
+		monthlyWorkingHrs=monthlyWorkingHrs;
+		salaryPerDay=salaryPerDay;
                 
 		for(int i=0; i<=no_days; i++) 
 		{
@@ -64,9 +70,9 @@ public class Employee_wages{
                 System.out.println("no of days-"+count);
                 int totalWorkingHrs=count*8;
 	         
-	 	if (count<20 && totalWorkingHrs<100)
+	 	if (count<noOfWorkingDays && totalWorkingHrs<monthlyWorkingHrs)
 		{
-                        int MonthlyWages=count*500;
+                        int MonthlyWages=count*salaryPerDay;
                         System.out.println("no of days  employee prsent in the month--"+count);
                         System.out.println("salary as per attendence--$"+MonthlyWages);
                  }
@@ -76,14 +82,4 @@ public class Employee_wages{
                 }
         }
 
-
-	public static void main(String[] args)
-	{
-		System.out.println("welcome to employee wage computational program");
-		System.out.println("------------------------------------------------");
-		Employee_wages ew1=new Employee_wages();
-		ew1.presentOrAbsent();
-		ew1.WagesCal();
-		ew1.conditionclac();
-	}
 }
